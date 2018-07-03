@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address_home: MyText
+  address_ofc: MyText
+
+two:
+  address_home: MyText
+  address_ofc: MyText

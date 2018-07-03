@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag delete_multiple_pizzas_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+<h1>Listing Pizzas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Variety</th>
+      <th>Price</th>
+      <th>Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pizzas.each do |pizza| %>
+      <tr>
+        <td><%= check_box_tag "pizzas[]", pizza.id %></td>
+        <td><%= pizza.name %></td>
+        <td><%= pizza.size %></td>
+        <td><%= pizza.variety %></td>
+        <td><%= pizza.price %></td>
+        <td><%= pizza.id %></td>
+        <td><%= link_to 'Show', pizza %></td>
+<!--         <td><%= link_to 'Edit', edit_pizza_path(pizza) %></td>
+        <td><%= link_to 'Destroy', pizza, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>  
+      <%= submit_tag "Delete selected" %>
+      <% end %>
+<br>
+
+<%= link_to 'New Pizza', new_pizza_path %>
